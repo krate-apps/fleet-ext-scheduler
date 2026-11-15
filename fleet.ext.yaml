@@ -1,0 +1,24 @@
+schema: 1
+id: org.fleet.scheduler
+name: Scheduler
+description: Apply weekly bandwidth windows with optional throttle profiles.
+version: 1.0.0
+api: ">=1.0.0 <2.0.0"
+engines:
+  - rtorrent
+capabilities:
+  - torrents.read
+  - torrents.actions
+  - engine.capabilities
+  - jobs.schedule
+  - settings.read
+  - settings.write
+  - storage.read
+  - storage.write
+frontend:
+  type: declarative
+  entry: ui/extension.json
+backend:
+  type: process
+  executable: bin/scheduler-worker
+  protocol: jsonrpc-2

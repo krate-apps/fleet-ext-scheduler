@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "extensionId": "org.fleet.scheduler",
+  "pages": [
+    {
+      "id": "schedule",
+      "title": "Bandwidth Schedule",
+      "route": "/ext/org.fleet.scheduler/schedule"
+    }
+  ],
+  "actions": [
+    {
+      "id": "apply-now",
+      "label": "Apply now",
+      "target": "global",
+      "primary": true
+    },
+    {
+      "id": "show-status",
+      "label": "Show status",
+      "target": "global"
+    }
+  ],
+  "panels": [
+    {
+      "id": "scheduler-settings",
+      "title": "Scheduler",
+      "placement": "settings"
+    }
+  ],
+  "forms": [
+    {
+      "id": "schedule-enable",
+      "title": "Schedule",
+      "fields": [
+        {
+          "name": "enabled",
+          "label": "Enabled",
+          "kind": "boolean",
+          "help": "Master switch for this worker."
+        }
+      ],
+      "loadMethod": "ext.scheduler.get",
+      "description": "Build weekly bandwidth windows above, then enable and Save."
+    }
+  ]
+}
